@@ -5,12 +5,12 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 import chromadb
 from dotenv import load_dotenv
 
-load_dotenv
+load_dotenv()
 
 chroma_client = chromadb.PersistentClient(path="./chroma_db")
 
 collection = chroma_client.get_or_create_collection(
-    name="knowlesge_base",
+    name="knowledge_base",
     metadata={"hnsw:space": "cosine",}
 )
 
